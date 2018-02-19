@@ -1,0 +1,77 @@
+<br />
+<div class="row">
+
+  <div class="col-md-8 col-md-offset-2">
+    <div class="card">
+      <div class="card-header" data-background-color="blue">
+        <h4>{{ title }}</h4>
+      </div>
+
+      <div class="card-content">
+
+        <div class="row">
+          <div class="col-md-3 div_img col-md-offset-4">
+            <img src="https://intigradhost.com/lib/images/logo.jpg" width="50" />
+          </div>
+        </div>
+
+        <hr>
+        <!-- contact person -->
+        <app-person-form-component [person]="booking.person" #personChild></app-person-form-component>
+
+        <hr>
+        <h6>USER INFORMATION</h6>
+        <div class="row">
+          <p class="col-md-6">
+            Registrant Contact Info:
+          </p>
+          <div class="col-md-6">
+            <label>
+              <input type="checkbox" name="optionsCheckboxes" (change)="registrantAvailablilityChange();" [checked]="isRegistrantSame"> SAME AS ABOVE
+            </label>
+          </div>
+        </div>
+
+        <div *ngIf="!isRegistrantSame">
+          <hr>
+          <!-- contact registrant -->
+          <app-person-form-component [person]="booking.domainRegistrant" #domainRegistrantChild></app-person-form-component>
+        </div>
+
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group label-floating" [class.has-error]="formSubmitted && error.username.length <= 0"
+              [class.has-success]="formSubmitted && error.username.length > 0">
+              <label class="control-label">Email Address: </label>
+              <input type="email"  class="form-control" name="username" placeholder="enter email / username" [(ngModel)]="booking.user.username" required/>
+              <span class="material-icons form-control-feedback" *ngIf="formSubmitted && error.username.length <= 0">clear</span>
+              <span class="form-control-feedback" *ngIf="formSubmitted && error.username.length > 0"><i class="material-icons">done</i></span>
+            </div>
+          </div>
+
+
+          <div class="col-md-6">
+            <div class="form-group label-floating" [class.has-error]="formSubmitted && error.password.length <= 0"
+              [class.has-success]="formSubmitted && error.password.length > 0">
+              <label class="control-label">Password: </label>
+              <input type="password"  class="form-control" name="userPassword" placeholder="enter email password" [(ngModel)]="booking.user.password" required/>
+              <span class="material-icons form-control-feedback" *ngIf="formSubmitted && error.password.length <= 0">clear</span>
+              <span class="form-control-feedback" *ngIf="formSubmitted && error.password.length > 0"><i class="material-icons">done</i></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card-footer">
+        <button class="btn btn-success btn-md btn-block" (click)="saveClicked()">SIGN UP</button>
+      </div>
+      <br />
+    </div>
+
+    <div class="row">
+      <a href="#" class="col-sm-12 text-center">Already own an account? LOGIN</a>
+    </div>
+  </div>
+</div>

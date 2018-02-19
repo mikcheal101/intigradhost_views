@@ -1,0 +1,114 @@
+<h6>PERSONAL INFORMATION</h6>
+<div class="row">
+
+  <div class="col-sm-6">
+    <div class="form-group label-floating" [class.has-error]="submitted && error.firstname" [class.has-success]="submitted && !error.firstname">
+      <label class="control-label">Firstname: </label>
+      <input type="text" class="form-control" name="fname" placeholder="enter firstname" [(ngModel)]="person.firstname" required />
+      <span class="material-icons form-control-feedback" *ngIf="submitted && error.firstname">clear</span>
+      <span class="form-control-feedback" *ngIf="submitted && !error.firstname"><i class="material-icons">done</i></span>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="form-group label-floating" [class.has-error]="submitted && error.lastname" [class.has-success]="submitted && !error.lastname">
+      <label class="control-label">Lastname: </label>
+      <input type="text" class="form-control" name="lname" placeholder="enter lastname" [(ngModel)]="person.lastname" required />
+      <span class="material-icons form-control-feedback" *ngIf="submitted && error.lastname">clear</span>
+      <span class="form-control-feedback" *ngIf="submitted && !error.lastname"><i class="material-icons">done</i></span>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-md-6">
+    <div class="form-group label-floating" [class.has-error]="submitted && error.email" [class.has-success]="submitted && !error.email">
+      <label class="control-label">Email Address: </label>
+      <input type="email" class="form-control" name="emailAddress" placeholder="enter email address" [(ngModel)]="person.email" required />
+      <span class="material-icons form-control-feedback" *ngIf="submitted && error.email">clear</span>
+      <span class="form-control-feedback" *ngIf="submitted && !error.email"><i class="material-icons">done</i></span>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="form-group label-floating" [class.has-error]="submitted && error.phoneNumber" [class.has-success]="submitted && !error.phoneNumber">
+      <label class="control-label">Phone Number: </label>
+      <input type="tel" class="form-control" name="telNumber" placeholder="enter phone number" [(ngModel)]="person.phoneNumber" required />
+      <span class="material-icons form-control-feedback" *ngIf="submitted && error.phoneNumber">clear</span>
+      <span class="form-control-feedback" *ngIf="submitted && !error.phoneNumber"><i class="material-icons">done</i></span>
+    </div>
+  </div>
+
+</div>
+
+<hr>
+<h6>CONTACT ADDRESS</h6>
+<div class="row">
+
+  <div class="col-md-12">
+    <div class="form-group label-floating" [class.has-success]="submitted">
+      <label class="control-label">Company Name: <small>(OPTIONAL)</small></label>
+      <input type="text" class="form-control" name="compName" placeholder="enter company name" [(ngModel)]="person.companyName" />
+      <span class="form-control-feedback" *ngIf="submitted"><i class="material-icons">done</i></span>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="form-group label-floating" [class.has-error]="submitted && error.streetAddress" [class.has-success]="submitted && !error.streetAddress">
+      <label class="control-label">Street Address: </label>
+      <input type="text" class="form-control" name="streetAddress" placeholder="enter street address" [(ngModel)]="person.streetAddress" required />
+      <span class="material-icons form-control-feedback" *ngIf="submitted && error.streetAddress">clear</span>
+      <span class="form-control-feedback" *ngIf="submitted && !error.streetAddress"><i class="material-icons">done</i></span>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="form-group label-floating" [class.has-error]="submitted && error.streetAddressTwo" [class.has-success]="submitted && !error.streetAddressTwo">
+      <label class="control-label">Street Address (2): </label>
+      <input type="text" class="form-control" name="streetAddressTwo" placeholder="enter street address (2)" [(ngModel)]="person.streetAddressTwo" />
+      <span class="material-icons form-control-feedback" *ngIf="submitted && error.streetAddressTwo">clear</span>
+      <span class="form-control-feedback" *ngIf="submitted && !error.streetAddressTwo"><i class="material-icons">done</i></span>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="form-group label-floating" [class.has-error]="submitted && error.postcode" [class.has-success]="submitted && !error.postcode">
+      <label class="control-label">Postcode: </label>
+      <input type="text" class="form-control" name="postcode" placeholder="enter postcode" [(ngModel)]="person.postcode" />
+      <span class="material-icons form-control-feedback" *ngIf="submitted && error.postcode">clear</span>
+      <span class="form-control-feedback" *ngIf="submitted && !error.postcode"><i class="material-icons">done</i></span>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="form-group label-floating" [class.has-error]="submitted && error.city" [class.has-success]="submitted && !error.city">
+      <label class="control-label">City: </label>
+      <input type="text" class="form-control" name="city" placeholder="enter city" [(ngModel)]="person.city" required />
+      <span class="material-icons form-control-feedback" *ngIf="submitted && error.city">clear</span>
+      <span class="form-control-feedback" *ngIf="submitted && !error.city"><i class="material-icons">done</i></span>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group label-floating" [class.has-error]="submitted && error.state" [class.has-success]="submitted && !error.state">
+      <label class="control-label">State: </label>
+      <input type="text" class="form-control" name="state" placeholder="enter state" [(ngModel)]="person.state" required />
+      <span class="material-icons form-control-feedback" *ngIf="submitted && error.state">clear</span>
+      <span class="form-control-feedback" *ngIf="submitted && !error.state"><i class="material-icons">done</i></span>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group label-floating" [class.has-error]="submitted && error.country" [class.has-success]="submitted && !error.country">
+      <label class="control-label">Country: </label>
+      <input type="text" class="form-control" name="country" placeholder="enter country" [(ngModel)]="person.country" required />
+      <span class="material-icons form-control-feedback" *ngIf="submitted && error.country">clear</span>
+      <span class="form-control-feedback" *ngIf="submitted && !error.country"><i class="material-icons">done</i></span>
+    </div>
+  </div>
+</div>
